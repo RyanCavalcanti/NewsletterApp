@@ -2,9 +2,9 @@ import ToggleTheme from "../ToggleTheme/ToggleTheme";
 
 function Header() {
   return(
-    <div className="flex h-20 bg-azul-200 dark:bg-dark-200 justify-between items-center px-5 sm:rounded-xl sm:m-5">
-      <span className="text-gray-100 ">Olá, usuário</span>
-      <h1 className="text-gray-100 text-xl">Alura Newsletter</h1>
+    <div className="p-5 w-full sm:m-5 sm:rounded-xl bg-alura-200 dark:bg-dark-200 flex justify-between items-center">
+      <span className="text-gray-100">Olá, Usuário</span>
+      <h1 className="text-gray-100 text-2xl sm:text-4xl">Alura Newsletter</h1>
       <ToggleTheme />
     </div>
   )

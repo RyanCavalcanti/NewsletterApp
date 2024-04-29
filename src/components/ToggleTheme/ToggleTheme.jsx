@@ -1,24 +1,25 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function ToggleTheme() {
-  const systemPreference = window.matchMedia('(prefers-color-scheme: dark').matches
-
-  const pageClasses = document.documentElement.classList;
+  const pageRef = document.documentElement.classList
+  const systemThemePreference = window.matchMedia('(prefers-color-scheme: dark)').matches
+  const [dark, setDark] = useState(systemThemePreference)
 
   useEffect(() => {
-    systemPreference && pageClasses.add('dark')
-  })
+    dark && pageRef.add('dark')
+  }, [])
 
-  const toggle = () => {
-    pageClasses.toggle('dark')
+  const toggleTheme = () => {
+    pageRef.toggle('dark')
+    setDark(!dark)
   }
 
   return(
     <div className="hidden sm:block">
-      <MoonIcon className="h-8 text-gray-100 block dark:hidden cursor-pointer" onClick={toggle}/>
-      <SunIcon className="h-8 text-gray-100 hidden dark:block cursor-pointer" onClick={toggle}/>
-    </div>
+    <SunIcon className='w-7 h-7 text-gray-100 cursor-pointer hidden dark:block' onClick={toggleTheme} />
+    <MoonIcon className='w-7 h-7 text-gray-100 cursor-pointer block dark:hidden' onClick={toggleTheme} />
+  </div>
   )
 }
 
