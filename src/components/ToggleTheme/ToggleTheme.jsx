@@ -15,11 +15,11 @@ function ToggleTheme() {
     setDark(!dark)
   }
 
-  return(
+  return (
     <div className="hidden sm:block">
-    <SunIcon className='w-7 h-7 text-gray-100 cursor-pointer hidden dark:block' onClick={toggleTheme} />
-    <MoonIcon className='w-7 h-7 text-gray-100 cursor-pointer block dark:hidden' onClick={toggleTheme} />
-  </div>
+      <SunIcon className='w-7 h-7 text-gray-100 cursor-pointer hidden dark:block' onClick={toggleTheme} />
+      <MoonIcon className='w-7 h-7 text-gray-100 cursor-pointer block dark:hidden' onClick={toggleTheme} />
+    </div>
   )
 }
 
